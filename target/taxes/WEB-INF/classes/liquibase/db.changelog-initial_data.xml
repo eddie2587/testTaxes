@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+		
+    <changeSet author="edi" id="initial_data-products">
+		<insert tableName="products">
+			<column name="id" value="1" />
+			<column name="name" value="Book" />
+			<column name="price" value="12.49" />
+			<column name="isImported" valueBoolean="false" />
+			<column name="isBasicTaxFree" valueBoolean="true" />
+		</insert>
+		<insert tableName="products">
+			<column name="id" value="2" />
+			<column name="name" value="Music CD" />
+			<column name="price" value="14.99" />
+			<column name="isImported" valueBoolean="false" />
+			<column name="isBasicTaxFree" valueBoolean="false" />
+		</insert>
+		<insert tableName="products">
+			<column name="id" value="3" />
+			<column name="name" value="Chocolate bar" />
+			<column name="price" value="0.85" />
+			<column name="isImported" valueBoolean="false" />
+			<column name="isBasicTaxFree" valueBoolean="true" />
+		</insert>
+		<insert tableName="products">
+			<column name="id" value="4" />
+			<column name="name" value="Box of chocolates 1 - imported" />
+			<column name="price" value="10.00" />
+			<column name="isImported" valueBoolean="true" />
+			<column name="isBasicTaxFree" valueBoolean="true" />
+		</insert>
+		<insert tableName="products">
+			<column name="id" value="5" />
+			<column name="name" value="Bottle of perfume 1 - imported" />
+			<column name="price" value="47.50" />
+			<column name="isImported" valueBoolean="true" />
+			<column name="isBasicTaxFree" valueBoolean="false" />
+		</insert>
+		<insert tableName="products">
+			<column name="id" value="6" />
+			<column name="name" value="Headache pills" />
+			<column name="price" value="9.75" />
+			<column name="isImported" valueBoolean="false" />
+			<column name="isBasicTaxFree" valueBoolean="true" />
+		</insert>
+		<insert tableName="products">
+			<column name="id" value="7" />
+			<column name="name" value="Bottle of perfume 2 - imported" />
+			<column name="price" value="27.99" />
+			<column name="isImported" valueBoolean="true" />
+			<column name="isBasicTaxFree" valueBoolean="false" />
+		</insert>
+		<insert tableName="products">
+			<column name="id" value="8" />
+			<column name="name" value="Bottle of perfume 3" />
+			<column name="price" value="18.99" />
+			<column name="isImported" valueBoolean="false" />
+			<column name="isBasicTaxFree" valueBoolean="false" />
+		</insert>
+		<insert tableName="products">
+			<column name="id" value="9" />
+			<column name="name" value="Box of chocolates 2 - imported" />
+			<column name="price" value="11.25" />
+			<column name="isImported" valueBoolean="true" />
+			<column name="isBasicTaxFree" valueBoolean="true" />
+		</insert>
+	</changeSet>
+	
+</databaseChangeLog>

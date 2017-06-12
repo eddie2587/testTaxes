@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+	<!-- schema creation -->
+	<!-- autoincrement/bigserial => dbms = postgresql -->
+	<!-- dbms = mysql - use auto_increment columns without bigserial -->
+	<!-- dbms = mssql use identity -->
+	<!-- dbms = oracle use autoincrement only for 12+, otherwise manually create sequences -->
+    <changeSet author="edi" id="schema_creation-tables">
+        
+        <createTable tableName="products">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="products_pkey"/>
+            </column>
+            <column name="isImported" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isBasicTaxFree" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(2000)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        
+        <createTable tableName="receipt_entries">
+       	   <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="receipt_entries_pkey"/>
+           </column>
+           <column name="quantity" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="priceWithTaxes" type="DOUBLE">
+              <constraints nullable="false"/>
+            </column>
+            <column name="product" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        
+        <createTable tableName="receipts">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="receipts_pkey"/>
+            </column>
+            <column name="salesTaxes" type="DOUBLE">
+            </column>
+            <column name="total" type="DOUBLE"/>
+        </createTable>
+        
+         <createTable tableName="receipt_receipt_entries">
+            <column name="receipt_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="entry_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+      </changeSet>
+      
+      <changeSet author="edi" id="schema_creation-Constraints">
+     	 <addPrimaryKey columnNames="receipt_id, entry_id" constraintName="receipt_receipt_entries_pkey" tableName="receipt_receipt_entries"/>
+     	 <addForeignKeyConstraint baseColumnNames="receipt_id" baseTableName="receipt_receipt_entries" constraintName="fk_receipt_receipt_entries" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="receipts"/>
+		 <addForeignKeyConstraint baseColumnNames="entry_id" baseTableName="receipt_receipt_entries" constraintName="fk_receipt_entries_receipt" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="receipt_entries"/>
+		 <addForeignKeyConstraint baseColumnNames="product" baseTableName="receipt_entries" constraintName="fk_products_receipt_entries" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="products"/>
+	  </changeSet>
+	  
+</databaseChangeLog>
