@@ -1,0 +1,4 @@
+CREATE DATABASE taxes CHARACTER SET=utf8 COLLATE=utf8_bin;
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
+GRANT ALL PRIVILEGES ON taxes.* TO 'admin'@'localhost' WITH GRANT OPTION;
+flush privileges;
