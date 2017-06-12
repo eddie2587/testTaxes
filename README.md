@@ -15,6 +15,6 @@ In order to run the application, copy the taxes.war file (from the target folder
 To create an order and get the receipt back send a POST request using any tool like Postman, SoapUI, Google Rest Console to:
 http://localhost:8080/taxes/orders.
 
-To see the receipts created for each order you can access: http://localhost:8080/taxes.
+To see the receipts created for each order you can access: http://localhost:8080/taxes/receipts.
 
 
