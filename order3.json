@@ -1,0 +1,36 @@
+{
+	"products" :[
+		{
+			"id": "6",
+			"name":"Headache pills",
+			"price":9.75,
+			"isImported":false,
+			"quantity": 1,
+			"isBasicTaxFree": true
+		},
+		{
+			"id": "7",
+			"name":"Bottle of perfume 2 - imported",
+			"price":27.99,
+			"isImported": true,
+			"quantity": 1,
+			"isBasicTaxFree": false
+		},
+		{
+			"id": "8",
+			"name":"Bottle of perfume 3",
+			"price":18.99,
+			"isImported":false,
+			"quantity": 1,
+			"isBasicTaxFree": false
+		},
+		{
+			"id": "9",
+			"name":"Box of chocolates 2 - imported",
+			"price":11.25,
+			"isImported": true,
+			"quantity": 1,
+			"isBasicTaxFree": true
+		}
+	]
+}

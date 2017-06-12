@@ -1,0 +1,28 @@
+{
+	"products" :[
+		{
+			"id": "1",
+			"name":"Book",
+			"price":12.49,
+			"isImported": false,
+			"quantity": 1,
+			"isBasicTaxFree": true
+		},
+		{
+			"id": "2",
+			"name":"Music CD",
+			"price":14.99,
+			"isImported":false,
+			"quantity": 1,
+			"isBasicTaxFree": false
+		},
+		{
+			"id": "3",
+			"name":"Chocolate bar",
+			"price":0.85,
+			"isImported":false,
+			"quantity": 1,
+			"isBasicTaxFree": true
+		}
+	]
+}

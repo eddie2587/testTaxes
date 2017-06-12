@@ -1,0 +1,20 @@
+{
+	"products" :[
+		{
+			"id": "4",
+			"name":"Box of chocolates 1 - imported",
+			"price":10.00,
+			"isImported": true,
+			"quantity": 1,
+			"isBasicTaxFree": true
+		},
+		{
+			"id": "5",
+			"name":"Bottle of perfume 1 - imported",
+			"price":47.50,
+			"isImported":true,
+			"quantity": 1,
+			"isBasicTaxFree": false
+		}
+	]
+}

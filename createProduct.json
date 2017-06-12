@@ -1,0 +1,7 @@
+{
+		"name":"new product",
+		"price":98.34,
+		"isImported":true,
+		"quantity": 1,
+		"isBasicTaxFree": true 
+}
