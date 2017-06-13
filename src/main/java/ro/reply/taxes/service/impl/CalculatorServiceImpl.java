@@ -8,6 +8,7 @@ import ro.reply.taxes.constants.ConfigurationConstants;
 import ro.reply.taxes.constants.TaxValues;
 import ro.reply.taxes.model.Product;
 import ro.reply.taxes.service.CalculatorService;
+import ro.reply.taxes.service.RoundingPolicyService;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
